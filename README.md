@@ -1,4 +1,5 @@
-# git-version-control
+# Version Control w/ Git
+
 
 Git 
 
