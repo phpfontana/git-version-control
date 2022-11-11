@@ -1,7 +1,7 @@
 # Version Control w/ Git
 
+Git is a very powerful protocol that is widely used for controlling the versions of a repo. With this tutorial you'll learn to use Git.
 
-Git 
 
 Step 1. git clone
 
