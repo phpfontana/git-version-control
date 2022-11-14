@@ -15,7 +15,7 @@ If `git` is installed the output should be something like this
 git version 2.37.1 
 ```
 
-If `git` is not installed you can check the official installation [Install git](https://github.com/git-guides/install-git) 
+If `git` is not installed you can check the official installation guide. [[Install git]](https://github.com/git-guides/install-git) 
 
 ## Getting Started
 
