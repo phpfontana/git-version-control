@@ -32,6 +32,34 @@ To list all your current configurations use.
 git config --list
 ```
 ## Local Version Control
+With Git it's possible to transform a local directory into a Git repository. To do this we first need to `cd` into the directory repo and initialize it with Git.
+```
+cd <repository_path>
+git init
+```
+This command will create a subdirectory called .git that contains all the necessary files from your repository.
+
+After initializing the directory, we can use the `status` command, which will be very useful to keep track of every step.
+```
+git status
+```
+
+The output should be something like this
+```
+On branch main
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+```
+
+To begin with version control you'll need to make an initial **commit**. 
+
+In order to do this you'll need to specify which file, or files, to version control.
+```
+git add file
+git status
+```
 
 Step 1. git clone
 
