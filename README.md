@@ -6,7 +6,6 @@ Git is a very powerful protocol that is widely used for controlling the versions
 first, you'll need to check if `git` is already installed in your system (it usually comes by default in most mac and linux machines).
 
 ```
-# Checking if git is installed
 git version
 ```
 
@@ -27,7 +26,7 @@ git config --global user.name <username>  # To setup username
 git config --global user.email <example@email.com>  # To setup email
 ```
 
-To list all your current configurations use.
+To list all current configurations use the following command.
 ```
 git config --list
 ```
@@ -51,15 +50,54 @@ On branch main
 No commits yet
 
 nothing to commit (create/copy files and use "git add" to track)
-```
+``` 
 
-To begin with version control you'll need to make an initial **commit**. 
+Now let's add a `README.txt` file to the repository and repeat the `git status` command.
+<img width="794" alt="Screenshot 2022-11-18 at 23 42 14" src="https://user-images.githubusercontent.com/104539928/202830565-50a996fa-461a-4c53-a985-ee53a373532c.png">
 
-In order to do this you'll need to specify which file, or files, to version control.
+The output should be something like this
 ```
-git add file
+On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	README.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+```
+The `git status` command will keep track of all untracked and tracked files
+
+To begin with version control we need to make an initial **commit**. To do this, we need to specify which file, or files, to version control.
+```
+git add README.txt
 git status
 ```
+
+The output should be something like this
+```
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   README.txt
+
+```
+Now the `README.txt` file was added for version control. To save or `commit` changes we use the `git commit` command.
+
+```
+git commit
+```
+
+you'll be asked to enter a small text specifying all the changes.
+
+if you are using `vim`, to start writing you'll first press the `s` key, to save the text press `esc` key followed by `:wq`
+
+<img width="794" alt="Screenshot 2022-11-19 at 00 04 33" src="https://user-images.githubusercontent.com/104539928/202831249-45838109-97b4-4d7a-99b2-9d5106d4918a.png">
+
 
 Step 1. git clone
 
