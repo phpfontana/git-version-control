@@ -1,22 +1,21 @@
-# Version Control w/ Git
+# Introduction
 
-Git is a very powerful protocol that is widely used for controlling the versions of a repo. With this tutorial you'll learn to use Git.
+Git is a popular version control system that is used by developers and organizations to manage and track changes to their code and projects. It allows multiple users to collaborate on a project, and provides a history of the changes and modifications that have been made to the code.
 
-## Installing Git
-first, you'll need to check if `git` is already installed in your system (it usually comes by default in most mac and linux machines).
+n this tutorial, I will explain how to use Git to create a new repository, make changes to files in the repository, and share those changes with others.
 
+# Getting Started
+To use Git, you will need to install it on your computer, and create a Git repository for your project. A Git repository is a local directory that contains the code and files for your project, and tracks the changes and modifications that have been made to the code.
+
+### Installing Git
+To install Git on your computer, you can follow these steps:
+
+1. Download the latest version of Git from the Git website.
+2. Follow the instructions to install Git on your computer.
+3. Open a terminal or command prompt, and verify that Git is installed and working by running the following command:
 ```
-git version
+git --version
 ```
-
-If `git` is installed the output should be something like this
-```
-git version 2.37.1 
-```
-
-If `git` is not installed you can check the official installation guide. [[Install git]](https://github.com/git-guides/install-git) 
-
-## Getting Started
 
 After installing `git` in your system you'll need to make a few configurations.
 
@@ -26,106 +25,82 @@ git config --global user.name <username>  # To setup username
 git config --global user.email <example@email.com>  # To setup email
 ```
 
-To list all current configurations use the following command.
+## Creating a Git Repository
+To create a new Git repository, you first need to create a new directory for your project. This can be done using the `mkdir` command in your terminal or command prompt. For example:
 ```
-git config --list
+mkdir my-project
 ```
-## Local Version Control
-With Git it's possible to transform a local directory into a Git repository. To do this we first need to `cd` into the directory repo and initialize it with Git.
+
+Once you have created your project directory, you can move into it using the `cd` command. For example:
 ```
 cd <repository_path>
+```
+
+To initialize your Git repository, you can use the `git init` command. This will create a new `.git` directory inside your project directory, which will store all of the information about your project's history.
+
+```
 git init
 ```
-This command will create a subdirectory called .git that contains all the necessary files from your repository.
 
-After initializing the directory, we can use the `status` command, which will be very useful to keep track of every step.
+### Adding Files to the Repository
+Once you have initialized your Git repository, you can start adding files to it. This can be done using the `git add` command, followed by the name of the file you want to add. For example:
 ```
-git status
-```
-
-The output should be something like this
-```
-On branch main
-
-No commits yet
-
-nothing to commit (create/copy files and use "git add" to track)
-``` 
-
-Now let's add a `README.txt` file to the repository and repeat the `git status` command.
-<img width="794" alt="Screenshot 2022-11-18 at 23 42 14" src="https://user-images.githubusercontent.com/104539928/202830565-50a996fa-461a-4c53-a985-ee53a373532c.png">
-
-The output should be something like this
-```
-On branch main
-
-No commits yet
-
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-	README.txt
-
-nothing added to commit but untracked files present (use "git add" to track)
-```
-The `git status` command will keep track of all untracked and tracked files
-
-To begin with version control we need to make an initial **commit**. To do this, we need to specify which file, or files, to version control.
-```
-git add README.txt
-git status
+git add myfile.txt
 ```
 
-The output should be something like this
-```
-On branch main
-
-No commits yet
-
-Changes to be committed:
-  (use "git rm --cached <file>..." to unstage)
-	new file:   README.txt
+You can also add all of the files in your project directory at once using the `git add .` command. This will add all of the files, including any new files that you may have created since initializing your repository.
 
 ```
-Now the `README.txt` file was added for version control. To save or `commit` changes we use the `git commit` command.
+git add .
+```
+### Commiting Changes
+Once you have added your files to the Git repository, you can commit your changes. A commit is a snapshot of your project at a specific point in time. When you make a commit, you include a message that describes the changes you have made.
+
+To make a commit, you can use the `git commit` command, followed by the `-m` option and a message describing your changes. For example:
+```
+git commit -m "Added myfile.txt to the repository"
+```
+
+## Sharing Changes with Others
+Once you have made some commits to your Git repository, you may want to share your changes with others. This can be done using a remote repository, which is a Git repository that is hosted on a server and can be accessed by multiple people.
+
+To push your changes to a remote repository, you first need to add the remote repository to your local repository using the `git remote add` command. This command takes two arguments: the name you want to give the remote repository, and the URL of the remote repository. For example:
 
 ```
-git commit
+git remote add origin https://github.com/username/my-project.git
 ```
 
-you'll be asked to enter a small text specifying all the changes.
+Once you have added the remote repository, you can push your changes to it using the `git push` command. This command takes two arguments: the name of the remote repository, and the name of the branch you want to push your changes to. For example:
+```
+git push origin master
+```
 
-if you are using `vim`, to start writing you'll first press the `s` key, to save the text press `esc` key followed by `:wq`
+This will push your local changes to the `master` branch of the remote repository, which is the main branch of the project.
 
-<img width="794" alt="Screenshot 2022-11-19 at 00 04 33" src="https://user-images.githubusercontent.com/104539928/202831249-45838109-97b4-4d7a-99b2-9d5106d4918a.png">
+## Managing Versions
 
+In Git, you can use the `git log` command to view the history of your repository. This command will show a list of all of the commits that have been made to your repository, along with the commit messages and the date and time of each commit.
 
-Step 1. git clone
+To view the history of your repository, you can use the `git log` command with the `--oneline` and `--decorate` options. For example:
+```
+git log --oneline --decorate
+```
 
-cd to cloned repo
+This will show the commit history in a condensed format, with each commit on a separate line and the branch and tag names displayed next to each commit.
 
-git status // verify status
+To view the details of a specific commit, you can use the `git show` command followed by the commit hash. The commit hash is a unique identifier for each commit in your repository, and you can find it by looking at the output of the `git log` command. For example:
+```
+git show abc123
+```
 
-git add <file> // make changes
+This will show the details of the commit with the hash `abc123`, including the changes that were made in that commit and the commit message.
 
-git commit // makes changes on local repo (main) and adds description to new added file
+To revert to a previous version of your repository, you can use the `git checkout` command followed by the commit hash. This will move your repository to the state it was in at the time of that commit. For example:
+```
+git checkout abc123
+```
+This will move your repository to the state it was in at the time of the commit with the hash `abc123`. Keep in mind that this will discard any changes that have been made since that commit, so it should be used with caution.
 
-s
-INSERT mode
-first commit
-description
-
-esc + :wq
-
-git push // adds changes to GitHub repo (origin)
-
-git log // shows each commit
-
-git log --oneline // Shows each commit and hash
-
-git branch -avv // verifica branch
-
-git checkout <hash> ir para uma branch
-
-git checkout main // volta para main
+In summary, you can use the `git log` command to view the history of your repository, the `git show` command to view the details of a specific commit, and the `git checkout` command to move your repository to a previous version.
 
 
