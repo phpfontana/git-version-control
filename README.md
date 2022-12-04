@@ -2,7 +2,7 @@
 
 Git is a popular version control system that is used by developers and organizations to manage and track changes to their code and projects. It allows multiple users to collaborate on a project, and provides a history of the changes and modifications that have been made to the code.
 
-n this tutorial, I will explain how to use Git to create a new repository, make changes to files in the repository, and share those changes with others.
+In this tutorial, I will explain how to use Git to create a new repository, make changes to files in the repository, and share those changes with others.
 
 # Getting Started
 To use Git, you will need to install it on your computer, and create a Git repository for your project. A Git repository is a local directory that contains the code and files for your project, and tracks the changes and modifications that have been made to the code.
