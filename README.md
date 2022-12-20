@@ -1,4 +1,4 @@
-# Introduction
+# Git Version Control
 
 Git is a popular version control system that is used by developers and organizations to manage and track changes to their code and projects. It allows multiple users to collaborate on a project, and provides a history of the changes and modifications that have been made to the code.
 
